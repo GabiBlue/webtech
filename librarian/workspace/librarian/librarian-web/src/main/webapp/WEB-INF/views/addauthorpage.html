@@ -1,0 +1,64 @@
+<html>
+<body>
+
+<h2 class="title">Add a new author</h2>
+<form action="" method="post" class="form">
+	<table>
+		<tr>
+			<td>Name:</td>
+			<td><input type="text" name="name" /></td>
+		</tr>
+		<tr>
+			<td>Nationality:</td>
+			<td>
+				<select name="nationality" required="required">
+					<option	value="Hungarian">Hungarian</option>
+					<option value="American">American</option>
+					<option value="Russian">Russian</option>
+					<option value="British">British</option>
+					<option value="Spanish">Spanish</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Birthdate:</td>
+			<td><input type="date" name="birthDate" /></td>
+		</tr>
+		</table>
+		<input type="submit" name="insert" value="save"/>
+</form>
+
+<script type="text/javascript">
+$.fn.serializeObject = function()
+{
+    var o = {};
+    var a = this.serializeArray();
+    $.each(a, function() {
+        if (o[this.name] !== undefined) {
+            if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+        } else {
+            o[this.name] = this.value || '';
+        }
+    });
+    return o;
+};
+
+$(document).ready(function() {
+    $("form").submit(function() { 
+        $.ajax({
+        	contentType: 'application/json',
+            data: JSON.stringify($('form').serializeObject()),
+            dataType: 'json',
+            processData: false,
+            type: 'POST',
+            url: 'author/insert'
+        });
+    });
+});
+</script>
+
+</body>
+</html>

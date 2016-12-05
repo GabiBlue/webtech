@@ -1,0 +1,32 @@
+ <script>
+	$.getJSON('authors', function(data) {
+		$('#content').append('<h1 class="title">Authors</h1>');
+		
+		var table = $('<table></table>');
+		$(table).append('<tr><th>ID</th><th>Name</th><th>Nationality</th><th>Birthdate</th></tr>');
+		$.each(data, function(key, value) {
+			var row = $('<tr></tr>');
+			
+			var id = $('<td>' + value['authorID'] + '</td>');
+			$(row).append(id);
+			
+			var name = $('<td>' + value['name'] + '</td>');
+			$(row).append(name);
+			
+			var nationality = $('<td>' + value['nationality'] + '</td>');
+			$(row).append(nationality);
+			
+			var date = new Date(value['birthDate']);
+			var birthDate = $('<td>' + date.format("mm/dd/yyyy") + '</td>');
+			$(row).append(birthDate);
+			
+			$(table).append(row);
+		});
+		$('#content').append(table);
+		
+		$('#content').append('To add a new author:<span class="functionButton"><a href="addauthor">add</a></span><br>');
+		$('#content').append('To modify an author:<span class="functionButton"><a href="updateauthor">update</a></span>');
+		
+		$('#content').append('<script type=\"text/javascript\">$.each($(\'.functionButton\'), function(fbIndex, fbValue) {$(fbValue).click(function(event) {event.preventDefault(); $(\'#content\').load($(this).find(\'a\').attr(\'href\'));});});<\/script>');
+	});
+</script>

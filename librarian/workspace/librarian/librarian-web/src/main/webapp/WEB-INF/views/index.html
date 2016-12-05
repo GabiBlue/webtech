@@ -1,5 +1,104 @@
 <html>
+<head>
+<title>Web Technologies I. project work - Created by Gabor Javora</title>
+<link href="css/mystyle.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="js/date.format.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$.each($('.menuButton'), function(mbIndex, mbValue) {
+			$(mbValue).click(
+					function(event) {
+						if ($(this).find('a').attr('href') != 'home') {
+							event.preventDefault();
+							$('#content').load($(this).find('a').attr('href'));
+						}
+					})
+		});
+	});
+</script>
+</head>
+
 <body>
-<h2>Hello World!</h2>
+	<div id="header">
+		<div id="banner"></div>
+		<div id="menubar">
+			<span class="menuButton"><a href="home">home</a></span>
+			<span class="menuButton"><a href="author">authors</a></span>
+			<span class="menuButton"><a href="book">books</a></span>
+			<span class="menuButton"><a href="contact">contact</a></span>
+		</div>
+	</div>
+	<div id="pageBody">
+		<div id="content">
+			<p>
+			Pokem ipsum dolor sit amet Magnemite Blastoise Machoke James Delibird anim id est
+			laborum. Sapphire Sandshrew Gastrodon Amoonguss Lilligant Dwebble Snorlax.
+			Hive Badge Boulder Badge Aipom Hitmontop Huntail Gastly Regirock. Charizard Mint
+			Berry Weedle Monferno Quilava Slowking Fire. Lorem ipsum dolor sit amet Chatot Giovanni
+			Razor Leaf Omanyte Dodrio Bibarel.
+			</p>
+			<p>
+			Blue Floatzel Milotic Empoleon Darumaka Mint Berry Crawdaunt. Cascade Badge Cherrim
+			Nidorina Shelmet Haxorus Gigalith Azelf. Sunt in culpa Zebstrika Kricketune Gastrodon
+			Heatmor Gabite Trapinch. Venusaur Seel Trapinch Ekans Kyurem Rhyhorn Ruby. Bug Weedle 
+			Ivysaur Golett Misty Dragonite sed do eiusmod tempor. 
+			</p>
+			<p>
+			Fire Red Skarmory Pokemon Master Boulder Badge Typhlosion Wartortle you're not wearing shorts.
+			Charmander Blaziken Arbok Teddiursa Gold Spinarak ut enim ad minim veniam. 
+			Dragon Unown Tornadus Larvitar Igglybuff Mareep Spoink. 
+			Fighting Rhyperior Elgyem Gold Lampent Abra Gothita. S.S. Anne Bagon Mienshao 
+			Magneton Moltres Cubchoo Musharna. 
+			</p>
+			<p>
+			Lorem ipsum dolor sit amet Lileep Pokemon The Movie 2000 Celadon Department 
+			Store our courage will pull us through Espeon Masquerain. Lorem ipsum dolor 
+			sit amet Klink Haunter Hariyama Regirock Torkoal Pidove. Water Rampardos Skuntank 
+			Chatot Amoonguss Huntail Gigalith. Harden Simisear Beheeyem Noctowl Ducklett Sandshrew 
+			Mareep. Pika-pi Arbok Scyther Sceptile Rotom Swellow the enemy Pokemon fainted. 
+			</p>
+			<p>
+			Mewtwo Strikes Back Huntail Crobat surrender now or prepare to fight Ambipom Arbok 
+			Cascade Badge. Cascade Badge Rufflet Masquerain Boldore Pokedex Tynamo Leech Life. 
+			Steel Nosepass Ice Berry Jirachi Accelgor we're blasting off again Koffing. 
+			Charmander Yellow Krabby Lapras Luxray grumpy old man who needs coffee Walrein. 
+			Ut labore et dolore magna aliqua Pokemon Bisharp Flareon Carracosta Kirlia Scizor. 
+			</p>
+			<p>
+			Johto Water Shaymin Mankey Swift Gothita Farfetch'd. Ice Deino Porygon2 Raichu Entei 
+			Tail Whip Chimchar. Cascade Badge Jigglypuff Pignite Klang Masquerain Combee Darmanitan. 
+			Poison Staravia Butterfree Umbreon quis nostrud exercitation Simisage Shuppet. 
+			S.S. Anne Jolteon Drifloon Makuhita Latios Rattata Piloswine. 
+			</p>
+			<p>
+			Razor Leaf Manectric Sandslash Gardevoir Groudon Larvesta Raticate. 
+			Steel Growlithe Ash Litwick Gastly Croconaw Sandslash. Gold Deoxys Medicham Goldeen 
+			Poison the power that's inside Wurmple. Razor Leaf Alakazam Pineco surrender now or 
+			prepare to fight Spinarak Tyrogue Sceptile. Bug Wooper Pignite Mewtwo Strikes Back 
+			Nurse Joy Zweilous Hitmonlee.  
+			</p>
+		</div>
+		<div id="newsPanel">
+			<div class="newsBubble">
+				<h1>Mean Streets of Gadgetzan</h1>
+				<p>Fill your decks with 132 powerful new cards and take the fight to an all new game board.</p>
+			</div>
+			<div class="newsBubble">
+				<h1>Hearthstone December 2016</h1>
+				<p>The December Ranked Play Season is now live - and we're unveiling a new card back.</p>
+			</div>
+			<div class="newsBubble">
+				<h1>Hearthstone Update</h1>
+				<p>The Tavern's never been more rough and tumble! This Hearthstone update paves the way for the arrival of The Mean Streets of Gadgetzan, Hearthstone's latest expansion.</p>
+			</div>
+		</div>
+		
+	</div>
+	<div id="footer">
+	Web Technologies I. project work
+	<br>
+	Created by Gabor Javora
+	</div>	
 </body>
 </html>
